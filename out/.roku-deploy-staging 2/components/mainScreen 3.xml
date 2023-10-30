@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="MainScreen" extends="Scene">
+      
+    <script type="text/brightscript" uri="mainScreen.brs" /> 
+
+    <children>         
+        <Poster
+            id="infoPoster"
+            translation="[57,520]"
+            width="45"
+            height="45"
+            opacity="0.7"
+            uri="pkg:/images/Marvel.webp" />
+        <CustomizedMovieViewer
+            id = "movieViewer"/> 
+        <CustomizedDataMovie
+            id = "dataMovieScreen" />
+        <Rectangle
+            width="659"
+            height="263"
+            color="0x747F7F"
+            opacity="1"
+            translation="[147,671]"/>
+        <LayoutGroup
+            id ="itemList"
+            layoutDirection = "horiz"
+            translation ="[150,674]"
+            itemSpacings = "[50]"/>
+    </children>
+</component>

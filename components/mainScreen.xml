@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="MainScreen" extends="Scene">
+
+    <script type="text/brightscript" uri="mainScreen.brs" />
+
+    <children>
+<Video
+    id="videoPlayer"
+    translation="[0,150]"
+    width="2000%"
+    height="700%"
+    focusable="true"
+    layer="999"
+    
+/>
+<!-- <Poster
+            translation="[862,471]"
+            width="1200"
+            height="150"
+            uri="pkg:/images/gradiantbuttom.png" />
+        <Poster
+            translation="[857,0]"
+            width="100"
+            height="615"
+            uri="pkg:/images/gradiantRigth.png" /> -->
+
+          <!-- botonMarvel1 -->
+        <Rectangle id="botonMarvel1" focusable="true" translation="[80,880]" width="250" height="150" opacity="1.0" color="0xFF0000">
+            <Poster uri="pkg:/images/capitan.jpeg" width="240%" height="140%" translation="[20,26]"/>
+        </Rectangle>
+
+        <!-- botonMarvel2 -->
+        <Rectangle id="botonMarvel2" focusable="true" translation="[380,880]" width="250" height="150" opacity="1.0" color="0xFF0000">
+            <Poster uri="pkg:/images/iron2.jpeg" width="240%" height="140%" translation="[20,26]"/>
+        </Rectangle>
+
+        <!-- botonMarvel3 -->
+        <Rectangle id="botonMarvel3" focusable="true" translation="[680,880]" width="250" height="150" opacity="1.0" color="0xFF0000">
+            <Poster uri="pkg:/images/thor.jpeg" width="240%" height="140%" translation="[20,26]"/>
+        </Rectangle>
+
+        <!-- texto! -->
+        <Label id="textoMarvel" text="Marvel Matias" height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
+            font="font:LargeBoldSystemFont"/>
+    </children>
+</component>
