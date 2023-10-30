@@ -5,7 +5,7 @@
     <script type="text/brightscript" uri="capitan.brs" /> 
  
     <children>
-<Label id="textoCapitan" text="capitan america" height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
+<Label id="textoCapitan" text="capitan america " height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
             font="font:LargeBoldSystemFont"/>
     </children>
 </component>
