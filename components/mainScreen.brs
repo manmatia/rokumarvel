@@ -37,6 +37,8 @@ sub onPosterButtonSelected(event as Object)
         if event.getTarget() = m.botonMarvel1
             ' Acciones específicas para botonMarvel1
             print "OK pressed on botonMarvel1"
+            capitanComponent= m.top.createChild("Capitan")
+            m.top.setFocus(capitanComponent)
             ' Agrega aquí la lógica para la ventana correspondiente a botonMarvel1
         else if event.getTarget() = m.botonMarvel2
             ' Acciones específicas para botonMarvel2

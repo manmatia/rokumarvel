@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<component name="Capitan" extends="capitanFunction">
+<component name="Capitan" extends="Group">
 
     <script type="text/brightscript" uri="capitan.brs" /> 
  
