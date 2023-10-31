@@ -43,5 +43,7 @@
         <!-- texto! -->
         <Label id="textoMarvel" text="Marvel Matias" height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF0000" translation="[200,30]" 
             font="font:LargeBoldSystemFont"/>
+
+        <capitan id ="capitan"/>
     </children>
 </component>

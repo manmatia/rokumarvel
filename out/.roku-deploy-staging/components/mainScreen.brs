@@ -14,7 +14,7 @@ sub init()
     m.botonMarvel3.observeField("buttonSelected", "onPosterButtonSelected")
   
     setVideo()
-
+    
 end sub
 
 function setVideo() 
@@ -88,7 +88,23 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
                 handled = true
             end if
 
-            
+        else if key = "ok"
+            ' Acciones específicas para el botón "OK"
+            if m.botonMarvel1.isInFocusChain()
+                print "OK pressed on botonMarvel1"
+                capitanComponent = m.top.createChild("Capitan")
+                m.top.setFocus(capitanComponent)
+                ' Agrega aquí la lógica para la ventana correspondiente a botonMarvel1
+                handled = true
+            else if m.botonMarvel2.isInFocusChain()
+                print "OK pressed on botonMarvel2"
+                ' Agrega aquí la lógica para la ventana correspondiente a botonMarvel2
+                handled = true
+            else if m.botonMarvel3.isInFocusChain()
+                print "OK pressed on botonMarvel3"
+                ' Agrega aquí la lógica para la ventana correspondiente a botonMarvel3
+                handled = true
+            end if
         end if
     end if
     
