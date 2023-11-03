@@ -7,5 +7,7 @@
     <children>
 <Label id="textoCapitan" text="capitan america " height="100" width="400" horizAlign="center" vertAlign="center" color="0xFF4252" translation="[1400,30]" 
             font="font:LargeBoldSystemFont"/>
+
+            <Poster uri="pkg:/images/iron.png" width="240%" height="140%" translation="[20,26]"/>
     </children>
 </component>

@@ -9,17 +9,15 @@ sub init()
     m.botonMarvel2.opacity = 0.3
     m.botonMarvel3.opacity = 0.3
 
-    m.botonMarvel1.observeField("buttonSelected", "onPosterButtonSelected")
-    m.botonMarvel2.observeField("buttonSelected", "onPosterButtonSelected")
-    m.botonMarvel3.observeField("buttonSelected", "onPosterButtonSelected")
-  
-    setVideo()
+    m.botonMarvel1.observeField("buttonSelected", "onButtonSelected")
     
+        setVideo()
 end sub
 
 function setVideo() 
     videoContent = createObject("RoSGNode", "ContentNode")
-    videoContent.URL = "https://www.google.com.ar/search?q=intro+de+marvel+video&sca_esv=577833058&tbm=vid&sxsrf=AM9HkKkH7rIvtEXPnjjGqYSF4zcnNMgFrA:1698679432050&source=lnms&sa=X&ved=2ahUKEwi8tImBip6CAxXzq5UCHanNAdoQ_AUoAXoECAIQAw&biw=1440&bih=779&dpr=2#fpstate=ive&vld=cid:b1d02f9b,vid:2SkMUjilx_M,st:0"
+    ' videoContent.URL = "https://www.google.com.ar/search?q=intro+de+marvel+video&sca_esv=577833058&tbm=vid&sxsrf=AM9HkKkH7rIvtEXPnjjGqYSF4zcnNMgFrA:1698679432050&source=lnms&sa=X&ved=2ahUKEwi8tImBip6CAxXzq5UCHanNAdoQ_AUoAXoECAIQAw&biw=1440&bih=779&dpr=2#fpstate=ive&vld=cid:b1d02f9b,vid:2SkMUjilx_M,st:0"
+   videoContent.URL="pkg:/images/MARVEL.mp4"
     videoContent.title = "Marvel"
     videoContent.streamformat = "mp4"
     
@@ -31,26 +29,7 @@ function setVideo()
   
 end function
 
-sub onPosterButtonSelected(event as Object)
-    if event.isButtonPressed("OK")
-        ' Aquí puedes abrir una nueva ventana y realizar acciones específicas para cada póster
-        if event.getTarget() = m.botonMarvel1
-            ' Acciones específicas para botonMarvel1
-            print "OK pressed on botonMarvel1"
-            capitanComponent= m.top.createChild("Capitan")
-            m.top.setFocus(capitanComponent)
-            ' Agrega aquí la lógica para la ventana correspondiente a botonMarvel1
-        else if event.getTarget() = m.botonMarvel2
-            ' Acciones específicas para botonMarvel2
-            print "OK pressed on botonMarvel2"
-            ' Agrega aquí la lógica para la ventana correspondiente a botonMarvel2
-        else if event.getTarget() = m.botonMarvel3
-            ' Acciones específicas para botonMarvel3
-            print "OK pressed on botonMarvel3"
-            ' Agrega aquí la lógica para la ventana correspondiente a botonMarvel3
-        end if
-    end if
-end sub
+
 
 function onKeyEvent(key as String, press as Boolean) as Boolean
     handled = false
@@ -89,20 +68,23 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
             end if
 
         else if key = "ok"
-            ' Acciones específicas para el botón "OK"
+            ' botón "OK"
             if m.botonMarvel1.isInFocusChain()
-                print "OK pressed on botonMarvel1"
-                capitanComponent = m.top.createChild("Capitan")
+                ' Abrir la escena "Capitan"
+                capitanComponent = m.top.findNode("Capitan")
+                ' Verifica si ya existe la escena "Capitan"
+                if capitanComponent = invalid
+                    capitanComponent = m.top.createChild("Capitan")
+                end if
                 m.top.setFocus(capitanComponent)
-                ' Agrega aquí la lógica para la ventana correspondiente a botonMarvel1
                 handled = true
             else if m.botonMarvel2.isInFocusChain()
-                print "OK pressed on botonMarvel2"
-                ' Agrega aquí la lógica para la ventana correspondiente a botonMarvel2
+                print "OKbotonMarvel2"
+                
                 handled = true
             else if m.botonMarvel3.isInFocusChain()
-                print "OK pressed on botonMarvel3"
-                ' Agrega aquí la lógica para la ventana correspondiente a botonMarvel3
+                print "OK botonMarvel3"
+                
                 handled = true
             end if
         end if
@@ -110,3 +92,17 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     
     return handled
 end function
+
+sub onButtonSelected(event as Object)
+    if event.isButtonPressed("OK")
+        if event.getTarget() = m.botonMarvel1
+            print "OK pressed on botonMarvel1"
+            ' Crear e inicializar la escena "Capitan"
+            capitanComponent = m.top.findNode("Capitan")
+            if capitanComponent = invalid
+                capitanComponent = m.top.createChild("Capitan")
+            end if
+            m.top.setFocus(capitanComponent)
+        end if
+    end if
+end sub

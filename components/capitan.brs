@@ -1,9 +1,8 @@
 sub init()
-    capitanFunction()
+    m.capitan= CreateObject("roSGNode", "capitan")
 end sub
 
-function capitanFunction() 
-m.capitan= CreateObject("roSGNode", "capitan")
+
+
 
   
-end function
